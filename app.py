@@ -13,7 +13,7 @@ import os
 import streamlit as st
 import base64
 
-# --- Set background image from local file with a dark tint overlay ---
+# --- Set background image from local file with a dark tint overlay 
 def set_bg_from_local(image_file):
     with open(image_file, "rb") as image:
         encoded = base64.b64encode(image.read()).decode()
