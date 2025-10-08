@@ -10,10 +10,10 @@ from sklearn.ensemble import RandomForestRegressor, IsolationForest
 import joblib
 import os
 
-import streamlit as st
-import base64
+# ✅ Must be called first
+st.set_page_config(page_title="Wine Quality Analysis", layout="wide")
 
-# --- Set background image from local file with a dark tint overlay 
+# --- Set background image from local file with a dark tint overlay ---
 def set_bg_from_local(image_file):
     with open(image_file, "rb") as image:
         encoded = base64.b64encode(image.read()).decode()
@@ -62,7 +62,6 @@ PHYSICOCHEMICAL_FEATURES = [
 ]
 
 # --- Load data/model ---
-st.set_page_config(page_title="Wine Quality Analysis", layout="wide")
 st.title("🍷 Wine Quality Analysis")
 df = load_data()
 model = load_or_train_model(df, PHYSICOCHEMICAL_FEATURES, "quality")
